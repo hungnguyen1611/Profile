@@ -1,0 +1,241 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+
+
+.gradient--text {
+  background: linear-gradient(45deg, #ff82f3, #7b13ff 50%, #400d64);
+  -webkit-background-clip: text;
+  /* Hỗ trợ Safari, Chrome cũ */
+  background-clip: text;
+  /* Chuẩn chính thức */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+
+/* Animation */
+
+.typewriter {
+  /* margin-right: '-100px'; */
+  overflow: hidden;
+  /* Ẩn phần text tràn ra */
+  border-right: 2px solid black;
+  /* Tạo hiệu ứng con trỏ gõ */
+  white-space: nowrap;
+  width: 0;
+  animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+
+
+
+
+/* animation button
+ */
+
+.btn-slide {
+  position: relative;
+  overflow: hidden;
+  width: 120px;
+  height: 45px;
+
+
+}
+
+.btn-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+
+}
+
+/* Trạng thái mặc định */
+.btn-text.default {
+  transform: translateY(0);
+}
+
+/* Lớp hover ở dưới ban đầu */
+.btn-text.hover {
+  transform: translateY(100%);
+
+  background: linear-gradient(45deg,
+      rgba(255, 130, 243, 0.4),
+      rgba(123, 19, 255, 0.4) 50%,
+      rgba(64, 13, 100, 0.4));
+
+  /* transform: translateY(100%); có thể ấn đi thay thế bằng cách này khi ko dùng absolute */
+}
+
+/* Khi hover thì trượt cả 2 lớp */
+.btn-slide:hover .default {
+  transform: translateY(-100%);
+}
+
+.btn-slide:hover .hover {
+  transform: translateY(0);
+
+  /* transform: translateY(-100%); có thể thay thế bằng cách này khi ko dùng absolute */
+}
+
+/* animation after vs before */
+/* <Button className="btn-slide no-span" /> */
+
+.btn-animation_let_talk,
+.btn-animation_menu {
+  position: relative;
+  overflow: hidden;
+  width: 120px;
+  height: 45px;
+}
+
+/* Hiển thị dòng chữ ban đầu */
+.btn-animation_let_talk::before {
+  content: "let's talk";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+
+}
+
+.btn-animation_menu::before {
+  content: "menu";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+
+.btn-hover-animation::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(45deg,
+      rgba(255, 130, 243, 0.4),
+      rgba(123, 19, 255, 0.4) 50%,
+      rgba(64, 13, 100, 0.4));
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+  transform: translateY(100%);
+  border-radius: 20px;
+
+
+}
+
+.btn-hover-animation:hover::before {
+  transform: translateY(0);
+}
+
+/* Hiển thị dòng chữ khi hover */
+.btn-animation_let_talk::after,
+.btn-animation_menu::after {
+  content: "Go now →";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  background: linear-gradient(45deg,
+      rgba(255, 130, 243, 0.4),
+      rgba(123, 19, 255, 0.4) 50%,
+      rgba(64, 13, 100, 0.4));
+  border-radius: 20px;
+
+}
+
+
+/* Khi hover: đẩy before lên, after trượt vào */
+.btn-animation_let_talk:hover::before,
+.btn-animation_menu:hover::before {
+  transform: translateY(-100%);
+}
+
+.btn-animation_let_talk:hover::after,
+.btn-animation_menu:hover::after {
+  transform: translateY(-100%);
+}
