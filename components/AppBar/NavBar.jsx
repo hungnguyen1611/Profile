@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { IconButton, Toolbar, Typography } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import { IoIosMenu } from "react-icons/io";

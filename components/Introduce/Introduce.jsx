@@ -6,6 +6,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
 import { SiGmail } from "react-icons/si";
 import ReusableType from "../ReusableType/ReusableType";
+import logo from "../../src/assets/images/logo.png";
 export default function Introduce() {
   return (
     <Box data-aos="zoom-in">
@@ -55,8 +56,8 @@ export default function Introduce() {
         >
           <Avatar
             sx={{ width: 250, height: 250 }}
-            alt="Remy Sharp"
-            src="./src/assets/images/image.png"
+            alt="Hsemy Sharp"
+            src={logo}
           />
         </Box>
 
