@@ -67,7 +67,12 @@ export default function Contact() {
           </Box>
           <Box>
             <Typography variant="h4">Call</Typography>
-            <Typography component={"a"} href="tel:0386905265" variant="h6">
+            <Typography
+              sx={{ wordBreak: "break-word" }}
+              component={"a"}
+              href="tel:0386905265"
+              variant="h6"
+            >
               +84386905265
             </Typography>
           </Box>

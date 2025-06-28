@@ -11,6 +11,10 @@ export default function Introduce() {
     <Box data-aos="zoom-in">
       <Typography
         sx={{
+          marginTop: {
+            xs: 4,
+            sm: 0,
+          },
           paddingY: 2,
           textAlign: "center",
           fontSize: {
@@ -112,7 +116,7 @@ export default function Introduce() {
                   <FaFacebook />
                 </Avatar>
               </Box>
-              <Box component={"a"} href="tel:0385905265">
+              <Box component={"a"} href="tel:0386905265">
                 <Avatar>
                   <FaPhone />
                 </Avatar>

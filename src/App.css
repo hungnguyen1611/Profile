@@ -57,6 +57,10 @@ a {
   color: #fff;
 }
 
+body {
+  padding: 0 !important
+}
+
 
 /* Animation */
 

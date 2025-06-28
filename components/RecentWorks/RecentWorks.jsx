@@ -12,7 +12,11 @@ export const RecentWorks = () => {
       }}
     >
       <Stack spacing={2.5} sx={{ mb: 8, px: { xs: 4, md: 20 } }}>
-        <Typography data-aos="fade-up" variant="h3" sx={{ fontWeight: "bold" }}>
+        <Typography
+          data-aos="fade-up"
+          variant="h3"
+          sx={{ fontWeight: "bold", fontSize: { xs: "2rem", sm: "3.75rem" } }}
+        >
           Recent&nbsp;
           <span className="gradient--text">Works</span>
         </Typography>

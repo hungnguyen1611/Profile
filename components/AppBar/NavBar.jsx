@@ -1,14 +1,14 @@
-import { Toolbar, Typography } from "@mui/material";
+import { IconButton, Toolbar, Typography } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
-
-export default function NavBar() {
+import { IoIosMenu } from "react-icons/io";
+export default function NavBar({ handleCloseSideBar }) {
   return (
     <AppBar
       sx={{ bgcolor: "background.light" }}
       position="static"
       component={"nav"}
     >
-      <Toolbar>
+      <Toolbar sx={{ justifyContent: "space-between" }}>
         <Typography
           sx={{
             paddingY: 2,
@@ -24,6 +24,10 @@ export default function NavBar() {
         >
           dev nguyen
         </Typography>
+
+        <IconButton onClick={handleCloseSideBar} color="inherit">
+          <IoIosMenu />
+        </IconButton>
       </Toolbar>
     </AppBar>
   );
