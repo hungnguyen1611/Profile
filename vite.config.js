@@ -5,7 +5,7 @@ import react from "@vitejs/plugin-react-swc";
 export default defineConfig({
   server: {
     host: true, // 👈 Bắt buộc để Vite lắng nghe trên địa chỉ IP nội bộ
-    port: 5173, // hoặc port bạn muốn
+    port: 5000, // hoặc port bạn muốn
   },
   plugins: [react()],
 });

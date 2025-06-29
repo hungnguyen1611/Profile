@@ -3,13 +3,16 @@ import { Box, Card, CardMedia, Typography } from "@mui/material";
 
 export default function CardProduct({ image }) {
   return (
-    <Box sx={{ mr: 8 }}>
+    <Box className="hover_card_image" sx={{ mr: 8 }}>
       <Card sx={{ borderRadius: 2 }}>
         <CardMedia
           component="img"
           image={image}
           alt="Paella dish"
-          sx={{ objectFit: "cover", aspectRatio: "16/9" }}
+          sx={{
+            objectFit: "cover",
+            aspectRatio: "16/9",
+          }}
         />
       </Card>
       <Box

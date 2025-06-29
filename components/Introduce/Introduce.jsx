@@ -81,8 +81,12 @@ export default function Introduce() {
               Biography
             </Typography>
             <Typography variant="body1">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua
+              Graduated in software engineering with a background in web design
+              and development and nearly a year of experience as a Front-end
+              Developer. Proficient in ReactJS, solid knowledge of HTML, CSS,
+              JavaScript. My goal is to become a Front-end expert within 2 years
+              by participating in projects and constantly learning and
+              practicing professional skills
             </Typography>
           </Box>
           <Box>
@@ -92,11 +96,35 @@ export default function Introduce() {
             >
               Skills
             </Typography>
-            <Typography variant="subtitle1">Web Development</Typography>
+            {/* <Typography variant="subtitle1">Web Development</Typography> */}
             <Box component={"ul"}>
-              <Box component={"li"}>UI & UX Design</Box>
-              <Box component={"li"}>Frontend Development</Box>
-              <Box component={"li"}>Backend Development</Box>
+              <Box component={"li"}>
+                <span className="gradient--text">Language:</span> Javascript,
+                TypeScript, Html, CSS
+              </Box>
+              <Box component={"li"}>
+                <span className="gradient--text">Framework & Library:</span>
+                ReactJS, NextJS, Ether.js, Redux, Redux-toolkit, redux-persist
+                Zustand, socket.io,MongoDB Node.js Driver
+              </Box>
+              <Box component={"li"}>
+                <span className="gradient--text">Library UI:</span>
+                Material UI, Ant Design,AOS, react-type-animation, react-slick,
+                Axios, react-toastify, dnd-kit
+              </Box>
+              <Box component={"li"}>
+                <span className="gradient--text">Database:</span> MongoDB,
+                Firebase
+              </Box>
+              <Box component={"li"}>
+                <span className="gradient--text">Version control:</span> Git
+              </Box>
+              <Box component={"li"}>
+                <span>Tools:</span> VSCode, Postman,Github, GitLab
+              </Box>
+              <Box component={"li"}>
+                <span className="gradient--text">Other:</span> Figma, Trello
+              </Box>
             </Box>
           </Box>
 
@@ -138,9 +166,16 @@ export default function Introduce() {
           sx={{
             flex: 1,
             gap: 2,
-
             alignSelf: "flex-start",
-            alignItems: "flex-end",
+            flexWrap: "wrap",
+            alignItems: {
+              xs: "flex-start",
+              md: "flex-end",
+            },
+            justifyContent: {
+              xs: "center",
+              md: "flex-end",
+            },
             order: {
               xs: 2,
             },
@@ -150,7 +185,7 @@ export default function Introduce() {
             },
           }}
         >
-          <Box>
+          <Box sx={{ textAlign: "center" }}>
             <Typography
               sx={{
                 fontWeight: "bold",
@@ -174,16 +209,13 @@ export default function Introduce() {
             </Typography>
           </Box>
 
-          <Box>
+          <Box sx={{ textAlign: "center" }}>
             <Typography
               sx={{
                 fontWeight: "bold",
                 textTransform: "uppercase",
-                "&.MuiTypography-root": {
-                  textAlign: "right",
-                },
               }}
-              variant="subtitle1"
+              variant="h6"
             >
               Years of Experience
             </Typography>
@@ -199,6 +231,37 @@ export default function Introduce() {
             >
               1
             </Typography>
+          </Box>
+
+          <Box
+            sx={{
+              textAlign: {
+                xs: "center",
+                md: "right",
+              },
+            }}
+          >
+            <Typography
+              sx={{ fontWeight: "bold", textTransform: "uppercase" }}
+              variant="h6"
+            >
+              EDUCATION
+            </Typography>
+
+            <Box
+              sx={{
+                mt: 0.9,
+                listStyleType: "none",
+                textAlign: {
+                  xs: "center",
+                  md: "right",
+                },
+              }}
+              component={"li"}
+            >
+              BACH KHOA SAIGON COLLEGE | 2021 - 2024 <br /> Major: Software
+              engineerin
+            </Box>
           </Box>
         </Stack>
       </Stack>

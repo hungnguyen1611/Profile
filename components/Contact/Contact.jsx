@@ -3,6 +3,8 @@ import { styled } from "@mui/material/styles";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { IoMdSend } from "react-icons/io";
+import API_ROOT from "../../src/utils/contants";
 const CustomTextField = styled(TextField)(({ theme }) => ({
   // "& + .MuiFormControl-root": {
   //   marginLeft: theme.spacing(2),
@@ -34,7 +36,7 @@ export default function Contact() {
   const onSubmit = (data) => {
     // Lưu ý cú pháp viết toast cần nhận vào 1 promise chưa xử lí, xử lí thì xuống dưới
     toast
-      .promise(axios.post("http://localhost:3000/v1/profile/send_info", data), {
+      .promise(axios.post(`${API_ROOT}/v1/profile/send_info`, data), {
         pending: "Sending message...",
         // success: "Message sent successfully!", viết ở dưới hoặc trên này
         error: "Failed to send message",
@@ -141,6 +143,7 @@ export default function Contact() {
             )}
           </Box>
           <Button
+            endIcon={<IoMdSend />}
             className="btn-hover-animation"
             type="submit"
             sx={{
@@ -149,7 +152,7 @@ export default function Contact() {
               overflow: "hidden",
             }}
           >
-            Send Message
+            Send
           </Button>
         </Stack>
       </Grid>

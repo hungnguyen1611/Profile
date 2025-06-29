@@ -32,7 +32,14 @@ export default function CarouselProduct() {
     <Box data-aos="fade-left">
       <Slider {...settings}>
         {listImages.map((image, index) => (
-          <CardProduct image={image} key={index} />
+          <Box
+            key={index}
+            component={"a"}
+            href="https://hungnguyen1611.online"
+            target="_blank"
+          >
+            <CardProduct image={image} />
+          </Box>
         ))}
       </Slider>
     </Box>

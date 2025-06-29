@@ -14,21 +14,34 @@ const Swipe = () => {
     dots: false, // ẩn dấu chấm
     // draggable: true, // cho phép kéo bằng chuột (Muốn kéo phải tắt autoplays)
     // swipeToSlide: true, // cho phép swipe tới bất kỳ slide gần nhất khi kéo
-    responsive: [
-      {
-        breakpoint: 768, // màn hình nhỏ hơn 768px
-        settings: {
-          slidesToShow: 2, // chỉ hiển thị 2 slide
-        },
-      },
-    ],
+    // responsive: [
+    //   {
+    //     breakpoint: 768, // màn hình nhỏ hơn 768px
+    //     settings: {
+    //       slidesToShow: 2, // chỉ hiển thị 2 slide
+    //     },
+    //   },
+    // ],
   };
 
   return (
     <Box sx={{ mt: 5 }}>
       <Slider {...settings}>
         {iconList.map((icon, index) => (
-          <Box key={index}>{icon}</Box>
+          <Box
+            sx={{
+              "& svg": {
+                fontSize: {
+                  xs: "50px",
+                  sm: "100px",
+                  md: "150px",
+                },
+              },
+            }}
+            key={index}
+          >
+            {icon}
+          </Box>
         ))}
       </Slider>
     </Box>
