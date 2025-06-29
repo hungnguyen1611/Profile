@@ -34,7 +34,8 @@ export const RecentWorks = () => {
           </Fab>
         </Box>
       </Stack>
-      <Box>
+      {/* Cần có lớp box dùng overflow: hidden để ko bị dư không gian khi dùng animation hoặc overflow: hidden với thẻ cha gần nhất  */}
+      <Box sx={{ overflow: "hidden" }}>
         <CarouselProduct />
       </Box>
     </Box>

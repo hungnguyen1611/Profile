@@ -1,10 +1,9 @@
 import { Box, Button, Grid, Stack, TextField, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useForm } from "react-hook-form";
-import axios from "axios";
-import { toast } from "react-toastify";
 import { IoMdSend } from "react-icons/io";
-import API_ROOT from "../../src/utils/contants";
+import { toast } from "react-toastify";
+import { sendInfo_API } from "../../APIS";
 const CustomTextField = styled(TextField)(({ theme }) => ({
   // "& + .MuiFormControl-root": {
   //   marginLeft: theme.spacing(2),
@@ -36,7 +35,7 @@ export default function Contact() {
   const onSubmit = (data) => {
     // Lưu ý cú pháp viết toast cần nhận vào 1 promise chưa xử lí, xử lí thì xuống dưới
     toast
-      .promise(axios.post(`${API_ROOT}/v1/profile/send_info`, data), {
+      .promise(sendInfo_API(data), {
         pending: "Sending message...",
         // success: "Message sent successfully!", viết ở dưới hoặc trên này
         error: "Failed to send message",
@@ -58,12 +57,17 @@ export default function Contact() {
         </Typography>
       </Grid>
 
-      <Grid size={{ xs: 12, md: 8 }} sx={{ mt: { xs: 4, md: 0 } }}>
+      <Grid
+        size={{ xs: 12, md: 8 }}
+        sx={{
+          mt: { xs: 4, md: 0 },
+          overflow: "hidden",
+        }}
+      >
         <Box data-aos="fade-left" sx={{ display: "flex", gap: 5 }}>
           <Box>
             <Typography variant="h4">Email:</Typography>
             <Box component={"a"} href="mailto:devnguyen@gmail">
-              {" "}
               <Typography variant="h6">devnguyen@gmail.com</Typography>
             </Box>
           </Box>
@@ -148,7 +152,7 @@ export default function Contact() {
             type="submit"
             sx={{
               padding: "10px 20px",
-              alignSelf: "flex-end",
+              alignSelf: "center",
               overflow: "hidden",
             }}
           >

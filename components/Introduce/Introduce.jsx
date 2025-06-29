@@ -141,12 +141,20 @@ export default function Introduce() {
                 target="_blank"
                 href="https://www.facebook.com/hung.nguyen.693851"
               >
-                <Avatar>
+                <Avatar
+                  sx={{
+                    "&:hover": { bgcolor: "#5EABD6", svg: { fill: "#fff" } },
+                  }}
+                >
                   <FaFacebook />
                 </Avatar>
               </Box>
               <Box component={"a"} href="tel:0386905265">
-                <Avatar>
+                <Avatar
+                  sx={{
+                    "&:hover": { bgcolor: "#FFB4B4", svg: { fill: "#fff" } },
+                  }}
+                >
                   <FaPhone />
                 </Avatar>
               </Box>
@@ -154,7 +162,11 @@ export default function Introduce() {
                 component={"a"}
                 href="mailto:nguyenquochung16112003@gmail.com"
               >
-                <Avatar>
+                <Avatar
+                  sx={{
+                    "&:hover": { bgcolor: "#FEFBC7", svg: { fill: "#ddd" } },
+                  }}
+                >
                   <SiGmail />
                 </Avatar>
               </Box>

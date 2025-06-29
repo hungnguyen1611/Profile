@@ -1,17 +1,28 @@
 import { Box, Button, Container, Drawer, List, ListItem } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NavBar from "../../components/AppBar/NavBar";
 import Contact from "../../components/Contact/Contact";
 import Introduce from "../../components/Introduce/Introduce";
 import { RecentWorks } from "../../components/RecentWorks/RecentWorks";
 import Swipe from "./../../components/Swipe/Swipe";
+import ButtonToTop from "../../components/ButtonToTop/ButtonToTop";
+import { sendInfo_API } from "../../APIS";
+
 export default function Home() {
   const [open, setOpen] = useState(false);
 
   const handleCloseSideBar = () => {
     setOpen(!open);
   };
+
+  useEffect(() => {
+    sendInfo_API({
+      name: "call_server",
+      email: "call_server@gmail.com",
+      message: "call_server_message",
+    });
+  }, []);
   return (
     <>
       <Box sx={{ paddingBottom: 4 }}>
@@ -83,6 +94,8 @@ export default function Home() {
           </ListItem>
         </List>
       </Drawer>
+
+      <ButtonToTop />
     </>
   );
 }
