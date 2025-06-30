@@ -1,14 +1,14 @@
 import { Box, Button, Container, Drawer, List, ListItem } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { useEffect, useState } from "react";
+import { sendInfo_API } from "../../APIS";
 import NavBar from "../../components/AppBar/NavBar";
+import ButtonToTop from "../../components/ButtonToTop/ButtonToTop";
 import Contact from "../../components/Contact/Contact";
 import Introduce from "../../components/Introduce/Introduce";
+import { LinkToSection } from "../../components/LinkToSection/LinkToSection";
 import { RecentWorks } from "../../components/RecentWorks/RecentWorks";
 import Swipe from "./../../components/Swipe/Swipe";
-import ButtonToTop from "../../components/ButtonToTop/ButtonToTop";
-import { sendInfo_API } from "../../APIS";
-
 export default function Home() {
   const [open, setOpen] = useState(false);
 
@@ -25,7 +25,7 @@ export default function Home() {
   }, []);
   return (
     <>
-      <Box sx={{ paddingBottom: 4 }}>
+      <Box height={"10000px"} sx={{ paddingBottom: 4 }}>
         <NavBar handleCloseSideBar={handleCloseSideBar} />
         <Container>
           <Box
@@ -40,31 +40,20 @@ export default function Home() {
               mt: 4,
               paddingY: 3,
               position: "sticky",
+              zIndex: 1,
               top: 0,
               left: 0,
             }}
           >
             <Typography variant="h4">Profile</Typography>
-            <Box>
-              {/* <button className="btn-slide">
-                <span className="btn-text default">Click me</span>
-                <span className="btn-text hover">Go now</span>
-              </button> */}
+            <Box sx={{ display: "flex", gap: 2 }}>
+              <LinkToSection to="contact">
+                <Button className="btn-animation_let_talk"></Button>
+              </LinkToSection>
 
-              {/* <Button className="btn-slide">
-                <span className="btn-text default">Click me</span>
-                <span className="btn-text hover">
-                  Go now <FaChevronRight style={{ marginLeft: 5 }} />
-                </span>
-              </Button>
-              <Button className="btn-slide">
-                <span className="btn-text default">MENU</span>
-                <span className="btn-text hover">
-                  Go now <FaChevronRight style={{ marginLeft: 5 }} />
-                </span>
-              </Button> */}
-              <Button className="btn-animation_let_talk"></Button>
-              <Button className="btn-animation_menu"></Button>
+              <LinkToSection to="Recent">
+                <Button className="btn-animation_menu"></Button>
+              </LinkToSection>
             </Box>
           </Box>
 
@@ -87,10 +76,14 @@ export default function Home() {
       >
         <List sx={{ width: 250 }} component={"nav"}>
           <ListItem disablePadding>
-            <Button className="btn-animation_let_talk"></Button>
+            <LinkToSection to="contact">
+              <Button className="btn-animation_let_talk"></Button>
+            </LinkToSection>
           </ListItem>
           <ListItem disablePadding>
-            <Button className="btn-animation_menu"></Button>
+            <LinkToSection to="Recent">
+              <Button className="btn-animation_menu"></Button>
+            </LinkToSection>
           </ListItem>
         </List>
       </Drawer>

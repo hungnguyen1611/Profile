@@ -5,9 +5,24 @@ import Typography from "@mui/material/Typography";
 import { FaFacebook } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
 import { SiGmail } from "react-icons/si";
-import ReusableType from "../ReusableType/ReusableType";
 import logo from "../../src/assets/images/logo.png";
+import ReusableType from "../ReusableType/ReusableType";
+import { useState } from "react";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Button,
+} from "@mui/material";
+import { MdArrowDownward, MdOutlineKeyboardArrowUp } from "react-icons/md";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+
 export default function Introduce() {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleToggle = () => {
+    setIsExpanded(!isExpanded);
+  };
   return (
     <Box data-aos="zoom-in">
       <Typography
@@ -80,14 +95,81 @@ export default function Introduce() {
             >
               Biography
             </Typography>
-            <Typography variant="body1">
-              Graduated in software engineering with a background in web design
-              and development and nearly a year of experience as a Front-end
-              Developer. Proficient in ReactJS, solid knowledge of HTML, CSS,
-              JavaScript. My goal is to become a Front-end expert within 2 years
-              by participating in projects and constantly learning and
-              practicing professional skills
-            </Typography>
+            {/* <Box>
+              <Typography
+                sx={{
+                  display: "-webkit-box",
+                  WebkitLineClamp: isExpanded ? "unset" : 3, // Bỏ giới hạn dòng khi mở rộng
+                  WebkitBoxOrient: "vertical",
+                  overflow: "hidden",
+                  // textOverflow: "ellipsis",
+                }}
+                variant="body1"
+              >
+                Graduated in software engineering with a background in web
+                design and development and nearly a year of experience as a
+                Front-end Developer. Proficient in ReactJS, solid knowledge of
+                HTML, CSS, JavaScript. My goal is to become a Front-end expert
+                within 2 years by participating in projects and constantly
+                learning and practicing professional skills
+              </Typography>
+              <Typography
+                variant="body1"
+                component={"button"}
+                onClick={handleToggle}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  color: "text.primary",
+                  cursor: "pointer",
+                  background: "none",
+                  border: "none",
+                  padding: 0,
+                }}
+              >
+                {isExpanded ? "compact" : "see more"}
+                {isExpanded ? (
+                  <MdOutlineKeyboardArrowUp />
+                ) : (
+                  <MdOutlineKeyboardArrowDown />
+                )}
+              </Typography>
+            </Box> */}
+
+            <Accordion
+              sx={{
+                bgcolor: "transparent",
+                "&.MuiPaper-root": { marginTop: 0 },
+              }}
+            >
+              <AccordionSummary
+                sx={{
+                  padding: 0,
+                  "& .MuiAccordionSummary-content": { margin: 0 },
+                  "&.MuiButtonBase-root": { minHeight: 0 },
+                }}
+                expandIcon={<MdArrowDownward color="#fff" />}
+                aria-controls="panel1-content"
+                id="panel1-header"
+              >
+                <Typography component="span">
+                  {" "}
+                  Graduated in software engineering with a background in web
+                  design and development and nearly a year of experience as a
+                  Front-end Developer.
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails sx={{ padding: 0 }}>
+                <Typography>
+                  Graduated in software engineering with a background in web
+                  design and development and nearly a year of experience as a
+                  Front-end Developer. Proficient in ReactJS, solid knowledge of
+                  HTML, CSS, JavaScript. My goal is to become a Front-end expert
+                  within 2 years by participating in projects and constantly
+                  learning and practicing professional skills
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
           </Box>
           <Box>
             <Typography
