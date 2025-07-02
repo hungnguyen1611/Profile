@@ -121,6 +121,7 @@ export default function Login() {
             >
               <Box>
                 <CustomTextField
+                  fullWidth
                   {...register("email", { required: true })}
                   placeholder="Email"
                 />
@@ -130,6 +131,7 @@ export default function Login() {
               </Box>
               <Box>
                 <CustomTextField
+                  fullWidth
                   {...register("password", { required: true })}
                   placeholder="Password"
                 />
