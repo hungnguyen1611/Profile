@@ -1,28 +1,16 @@
+import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { FaFacebook } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
+import { MdArrowDownward } from "react-icons/md";
 import { SiGmail } from "react-icons/si";
 import logo from "../../src/assets/images/logo.png";
 import ReusableType from "../ReusableType/ReusableType";
-import { useState } from "react";
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Button,
-} from "@mui/material";
-import { MdArrowDownward, MdOutlineKeyboardArrowUp } from "react-icons/md";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 export default function Introduce() {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  const handleToggle = () => {
-    setIsExpanded(!isExpanded);
-  };
   return (
     <Box data-aos="zoom-in">
       <Typography
@@ -139,12 +127,16 @@ export default function Introduce() {
             <Accordion
               sx={{
                 bgcolor: "transparent",
-                "&.MuiPaper-root": { marginTop: 0 },
+                "&.MuiAccordion-root": {
+                  marginTop: "8px !important",
+                },
+                mt: 2,
               }}
             >
               <AccordionSummary
                 sx={{
                   padding: 0,
+                  margin: 0,
                   "& .MuiAccordionSummary-content": { margin: 0 },
                   "&.MuiButtonBase-root": { minHeight: 0 },
                 }}
@@ -153,7 +145,6 @@ export default function Introduce() {
                 id="panel1-header"
               >
                 <Typography component="span">
-                  {" "}
                   Graduated in software engineering with a background in web
                   design and development and nearly a year of experience as a
                   Front-end Developer.

@@ -9,11 +9,18 @@ import Introduce from "../../components/Introduce/Introduce";
 import { LinkToSection } from "../../components/LinkToSection/LinkToSection";
 import { RecentWorks } from "../../components/RecentWorks/RecentWorks";
 import Swipe from "./../../components/Swipe/Swipe";
+import { Link, useNavigate } from "react-router-dom";
 export default function Home() {
+  const user = JSON.parse(localStorage.getItem("userInfo"));
   const [open, setOpen] = useState(false);
-
+  const navigate = useNavigate();
   const handleCloseSideBar = () => {
     setOpen(!open);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("userInfo");
+    navigate("/login");
   };
 
   useEffect(() => {
@@ -25,7 +32,7 @@ export default function Home() {
   }, []);
   return (
     <>
-      <Box height={"10000px"} sx={{ paddingBottom: 4 }}>
+      <Box sx={{ paddingBottom: 4, mb: 75 }}>
         <NavBar handleCloseSideBar={handleCloseSideBar} />
         <Container>
           <Box
@@ -54,6 +61,22 @@ export default function Home() {
               <LinkToSection to="Recent">
                 <Button className="btn-animation_menu"></Button>
               </LinkToSection>
+              {!user ? (
+                <Link to="/login">
+                  <Button className="btn-animation_login"></Button>
+                </Link>
+              ) : (
+                <Button
+                  onClick={handleLogout}
+                  className="btn-animation_logout"
+                ></Button>
+              )}
+
+              {user?.role === "admin" && (
+                <Link to="/admin">
+                  <Button className="btn-animation_admin"></Button>
+                </Link>
+              )}
             </Box>
           </Box>
 
@@ -74,16 +97,37 @@ export default function Home() {
         open={open}
         onClose={handleCloseSideBar}
       >
-        <List sx={{ width: 250 }} component={"nav"}>
-          <ListItem disablePadding>
+        <List sx={{ width: 280 }} component={"nav"}>
+          <ListItem>
             <LinkToSection to="contact">
               <Button className="btn-animation_let_talk"></Button>
             </LinkToSection>
           </ListItem>
-          <ListItem disablePadding>
+          <ListItem>
             <LinkToSection to="Recent">
               <Button className="btn-animation_menu"></Button>
             </LinkToSection>
+          </ListItem>
+          {!user ? (
+            <ListItem>
+              <Link to="/login">
+                <Button className="btn-animation_login"></Button>
+              </Link>
+            </ListItem>
+          ) : (
+            <ListItem>
+              <Button
+                onClick={handleLogout}
+                className="btn-animation_logout"
+              ></Button>
+            </ListItem>
+          )}
+          <ListItem>
+            {user?.role === "admin" && (
+              <Link to="/admin">
+                <Button className="btn-animation_admin"></Button>
+              </Link>
+            )}
           </ListItem>
         </List>
       </Drawer>

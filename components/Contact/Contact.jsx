@@ -1,31 +1,10 @@
-import { Box, Button, Grid, Stack, TextField, Typography } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
-import { IoMdSend } from "react-icons/io";
+import { Element } from "react-scroll";
 import { toast } from "react-toastify";
 import { sendInfo_API } from "../../APIS";
-import { Link, Element, animateScroll as scroll } from "react-scroll";
-const CustomTextField = styled(TextField)(({ theme }) => ({
-  // "& + .MuiFormControl-root": {
-  //   marginLeft: theme.spacing(2),
-  // },
+import { CustomTextField } from "../CustomTextField/CustomTextField";
 
-  "& input, & textarea": {
-    backgroundColor: theme.palette.background.light,
-    borderRadius: "8px",
-  },
-  "& .MuiOutlinedInput-root": {
-    "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-      borderColor: theme.palette.text.primary,
-    },
-  },
-  "& .MuiInputLabel-root": {
-    color: "gray",
-    "&.Mui-focused": {
-      color: theme.palette.text.primary,
-    },
-  },
-}));
 export default function Contact() {
   const {
     register,
@@ -153,17 +132,14 @@ export default function Contact() {
               )}
             </Box>
             <Button
-              endIcon={<IoMdSend />}
-              className="btn-hover-animation"
+              className="btn-animation_submit"
               type="submit"
               sx={{
                 padding: "10px 20px",
                 alignSelf: "center",
                 overflow: "hidden",
               }}
-            >
-              Send
-            </Button>
+            ></Button>
           </Stack>
         </Grid>
       </Grid>

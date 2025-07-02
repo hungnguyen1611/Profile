@@ -4,10 +4,26 @@ import CardProduct from "./CardProduct/CardProduct";
 
 export default function CarouselProduct() {
   const listImages = [
-    "https://i.pinimg.com/736x/a5/4d/93/a54d93e887a3e6ae6db8089a5f01bb48.jpg",
-    "https://i.pinimg.com/736x/73/40/09/7340099e471dd832e7fbee2427555925.jpg",
-    "https://i.pinimg.com/736x/d2/f2/f7/d2f2f7a0b3c91ee7ce82a59f2817dcef.jpg",
-    "https://i.pinimg.com/736x/9a/ea/14/9aea14245729922d70e034c01fd4e953.jpg",
+    {
+      url: "https://i.pinimg.com/736x/a5/4d/93/a54d93e887a3e6ae6db8089a5f01bb48.jpg",
+      name: "MMO WEB3",
+      href: "https://mmoweb3.com",
+    },
+    {
+      url: "https://i.pinimg.com/736x/73/40/09/7340099e471dd832e7fbee2427555925.jpg",
+      name: "TRELLO WEB",
+      href: "https://trello-8owvbc8cl-hungnguyen1611s-projects.vercel.app/",
+    },
+    {
+      url: "https://i.pinimg.com/736x/d2/f2/f7/d2f2f7a0b3c91ee7ce82a59f2817dcef.jpg",
+      name: "MULTI WALLET",
+      href: "https://chromewebstore.google.com/detail/multi-wallet/nlgnepoeokdfodgjkjiblkadkjbdfmgd?hl=vi&utm_source=ext_sidebar",
+    },
+    {
+      url: "https://i.pinimg.com/736x/9a/ea/14/9aea14245729922d70e034c01fd4e953.jpg",
+      name: "PORFOLIO",
+      href: "https://hungnguyen1611.online",
+    },
   ];
   const settings = {
     infinite: true, // lặp vô hạn
@@ -32,12 +48,7 @@ export default function CarouselProduct() {
     <Box data-aos="fade-left">
       <Slider {...settings}>
         {listImages.map((image, index) => (
-          <Box
-            key={index}
-            component={"a"}
-            href="https://trello-web-flame.vercel.app"
-            target="_blank"
-          >
+          <Box key={index} component={"a"} href={image.href} target="_blank">
             <CardProduct image={image} />
           </Box>
         ))}

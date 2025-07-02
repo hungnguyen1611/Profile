@@ -23,9 +23,8 @@ export const RecentWorks = () => {
             <span className="gradient--text">Works</span>
           </Typography>
           <Typography data-aos="fade-up" component={"p"}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation
+            A selection of recent projects focused on delivering smooth user
+            experiences and real-world performance.
           </Typography>
           <Box data-aos="fade-up">
             <Fab>

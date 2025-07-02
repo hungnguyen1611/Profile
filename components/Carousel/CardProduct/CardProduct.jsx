@@ -7,7 +7,7 @@ export default function CardProduct({ image }) {
       <Card sx={{ borderRadius: 2 }}>
         <CardMedia
           component="img"
-          image={image}
+          image={image?.url}
           alt="Paella dish"
           sx={{
             objectFit: "cover",
@@ -24,7 +24,7 @@ export default function CardProduct({ image }) {
         }}
         component={"ul"}
       >
-        <Box
+        {/* <Box
           sx={{
             "&:first-of-type": { listStyleType: "none" },
           }}
@@ -33,9 +33,11 @@ export default function CardProduct({ image }) {
           Visual Art
         </Box>
         <Box component={"li"}>Visual Art</Box>
-        <Box component={"li"}>Visual Art</Box>
+        <Box component={"li"}>Visual Art</Box> */}
       </Box>
-      <Typography variant="h5">Visual Art</Typography>
+      <Typography fontFamily="Delius" className="gradient--text" variant="h5">
+        {image?.name}
+      </Typography>
     </Box>
   );
 }

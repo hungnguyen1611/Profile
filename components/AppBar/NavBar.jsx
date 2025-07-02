@@ -5,8 +5,10 @@ import { IoIosMenu } from "react-icons/io";
 export default function NavBar({ handleCloseSideBar }) {
   return (
     <AppBar
-      sx={{ bgcolor: "background.light" }}
-      position="static"
+      sx={{
+        bgcolor: "background.light",
+        position: { xs: "sticky", sm: "static" },
+      }}
       component={"nav"}
     >
       <Toolbar sx={{ justifyContent: "space-between" }}>
@@ -26,7 +28,11 @@ export default function NavBar({ handleCloseSideBar }) {
           dev nguyen
         </Typography>
 
-        <IconButton onClick={handleCloseSideBar} color="inherit">
+        <IconButton
+          sx={{ display: { xs: "block", sm: "none" } }}
+          onClick={handleCloseSideBar}
+          color="inherit"
+        >
           <IoIosMenu />
         </IconButton>
       </Toolbar>
