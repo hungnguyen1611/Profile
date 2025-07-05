@@ -1,7 +1,7 @@
 import { Box, Button, Container, Drawer, List, ListItem } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import { useEffect, useState } from "react";
-import { sendInfo_API } from "../../APIS";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import NavBar from "../../components/AppBar/NavBar";
 import ButtonToTop from "../../components/ButtonToTop/ButtonToTop";
 import Contact from "../../components/Contact/Contact";
@@ -9,7 +9,6 @@ import Introduce from "../../components/Introduce/Introduce";
 import { LinkToSection } from "../../components/LinkToSection/LinkToSection";
 import { RecentWorks } from "../../components/RecentWorks/RecentWorks";
 import Swipe from "./../../components/Swipe/Swipe";
-import { Link, useNavigate } from "react-router-dom";
 export default function Home() {
   const user = JSON.parse(localStorage.getItem("userInfo"));
   const [open, setOpen] = useState(false);
@@ -23,13 +22,14 @@ export default function Home() {
     navigate("/login");
   };
 
-  useEffect(() => {
-    sendInfo_API({
-      name: "call_server",
-      email: "call_server@gmail.com",
-      message: "call_server_message",
-    });
-  }, []);
+  // useEffect(() => {
+  //   sendInfo_API({
+  //     name: "call_server",
+  //     email: "call_server@gmail.com",
+  //     message: "call_server_message",
+  //   });
+  // }, []);
+
   return (
     <>
       <Box sx={{ paddingBottom: 4, mb: 75 }}>

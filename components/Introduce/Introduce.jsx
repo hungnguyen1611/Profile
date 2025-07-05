@@ -136,9 +136,10 @@ export default function Introduce() {
               <AccordionSummary
                 sx={{
                   padding: 0,
-                  margin: 0,
-                  "& .MuiAccordionSummary-content": { margin: 0 },
+
+                  "& .MuiAccordionSummary-content.Mui-expanded": { margin: 0 },
                   "&.MuiButtonBase-root": { minHeight: 0 },
+                  "&MuiAccordionSummary-content": { margin: 0 },
                 }}
                 expandIcon={<MdArrowDownward color="#fff" />}
                 aria-controls="panel1-content"

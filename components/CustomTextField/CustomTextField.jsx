@@ -29,12 +29,21 @@ export const CustomTextField = styled(TextField)(({ theme }) => ({
   },
 
   "& .MuiInputBase-input:-internal-autofill-selected": {
-    WebkitBoxShadow: "0 0 0 1000px #e0f7fa inset", // Màu nền khi chọn gợi ý
-    WebkitTextFillColor: "#000", // Màu chữ
+    WebkitBoxShadow: "0 0 0 1000px #262626 inset", // Màu nền khi chọn gợi ý
+    WebkitTextFillColor: "#fff", // Màu chữ
   },
   "& .MuiInputBase-input:-internal-autofill-previewed": {
-    WebkitBoxShadow: "0 0 0 1000px #f0f4c3 inset", // Màu nền khi gợi ý được xem trước
-    WebkitTextFillColor: "#000", // Màu chữ
+    WebkitBoxShadow: `0 0 0 1000px #262626 inset`,
+    // Màu nền khi gợi ý được xem trước
+    WebkitTextFillColor: "#fff", // Màu chữ
     backgroundColor: "#f0f4c3", // Đảm bảo nền đồng nhất
   },
 }));
+
+// "0 0 0 1000px" là phần độ đổ bóng.
+
+// theme.palette.background.default là màu nền từ theme MUI.
+
+// " inset" là để áp dụng hiệu ứng đổ bóng vào trong (inset).
+
+// Khoảng trắng rất quan trọng khi nối chuỗi trong CSS.
