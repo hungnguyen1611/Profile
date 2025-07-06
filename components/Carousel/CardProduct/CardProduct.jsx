@@ -3,7 +3,15 @@ import { Box, Card, CardMedia, Typography } from "@mui/material";
 
 export default function CardProduct({ image }) {
   return (
-    <Box className="hover_card_image" sx={{ mr: 8 }}>
+    <Box
+      sx={{
+        px: {
+          xs: 4,
+          md: 2,
+        },
+      }}
+      className="hover_card_image"
+    >
       <Card sx={{ borderRadius: 2 }}>
         <CardMedia
           component="img"

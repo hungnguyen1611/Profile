@@ -2,7 +2,9 @@ import { Box, Fab, Stack, Typography } from "@mui/material";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import CarouselProduct from "../Carousel/CarouselProduct";
 import { Element } from "react-scroll";
+import { useRef } from "react";
 export const RecentWorks = () => {
+  const slideRef = useRef(null);
   return (
     <Element name="Recent">
       <Box
@@ -27,17 +29,17 @@ export const RecentWorks = () => {
             experiences and real-world performance.
           </Typography>
           <Box data-aos="fade-up">
-            <Fab>
+            <Fab onClick={() => slideRef.current?.slickPrev()}>
               <FaChevronLeft />
             </Fab>
-            <Fab sx={{ ml: 2 }}>
+            <Fab onClick={() => slideRef.current?.slickNext()} sx={{ ml: 2 }}>
               <FaChevronRight />
             </Fab>
           </Box>
         </Stack>
         {/* Cần có lớp box dùng overflow: hidden để ko bị dư không gian khi dùng animation hoặc overflow: hidden với thẻ cha gần nhất  */}
         <Box sx={{ overflow: "hidden" }}>
-          <CarouselProduct />
+          <CarouselProduct ref={slideRef} />
         </Box>
       </Box>
     </Element>

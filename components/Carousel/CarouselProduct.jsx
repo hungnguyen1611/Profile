@@ -1,8 +1,9 @@
 import { Box } from "@mui/material";
 import Slider from "react-slick";
 import CardProduct from "./CardProduct/CardProduct";
+import { forwardRef } from "react";
 
-export default function CarouselProduct() {
+function CarouselProduct(props, ref) {
   const listImages = [
     {
       url: "https://i.pinimg.com/736x/a5/4d/93/a54d93e887a3e6ae6db8089a5f01bb48.jpg",
@@ -12,7 +13,7 @@ export default function CarouselProduct() {
     {
       url: "https://i.pinimg.com/736x/73/40/09/7340099e471dd832e7fbee2427555925.jpg",
       name: "TRELLO WEB",
-      href: "https://trello-8owvbc8cl-hungnguyen1611s-projects.vercel.app/",
+      href: "https://trello-web-flame.vercel.app",
     },
     {
       url: "https://i.pinimg.com/736x/d2/f2/f7/d2f2f7a0b3c91ee7ce82a59f2817dcef.jpg",
@@ -26,15 +27,16 @@ export default function CarouselProduct() {
     },
   ];
   const settings = {
-    infinite: true, // lặp vô hạn
-    speed: 10000, // tốc độ chạy (ms) → càng lớn càng mượt
+    // infinite: true, // lặp vô hạn
+    speed: 1000, // tốc độ chạy (ms) → càng lớn càng mượt => càng thấp càng nhanh
     slidesToShow: 2, // số slide hiển thị
     slidesToScroll: 1, // mỗi lần cuộn 1 slide
-    autoplay: true, // tự động chạy
+    // autoplay: true, // tự động chạy
     autoplaySpeed: 0, // không delay giữa các lần chạy
     cssEase: "linear", // hiệu ứng trượt đều (không bị giật)
     arrows: false, // ẩn nút bấm
     dots: false, // ẩn dấu chấm
+
     responsive: [
       {
         breakpoint: 768, // màn hình nhỏ hơn 768px
@@ -46,9 +48,15 @@ export default function CarouselProduct() {
   };
   return (
     <Box data-aos="fade-left">
-      <Slider {...settings}>
+      <Slider ref={ref} {...settings}>
         {listImages.map((image, index) => (
-          <Box key={index} component={"a"} href={image.href} target="_blank">
+          <Box
+            className="slider-custom"
+            key={index}
+            component={"a"}
+            href={image.href}
+            target="_blank"
+          >
             <CardProduct image={image} />
           </Box>
         ))}
@@ -56,3 +64,5 @@ export default function CarouselProduct() {
     </Box>
   );
 }
+
+export default forwardRef(CarouselProduct);
