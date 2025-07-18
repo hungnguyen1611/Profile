@@ -60,9 +60,21 @@ export default function Login() {
       <Box
         sx={{
           bgcolor: "background.paper",
-          margin: 8,
-          width: "80%",
-          aspectRatio: "16/9",
+          width: {
+            xs: "100%",
+            sm: "90%",
+            md: "80%",
+          },
+          height: {
+            xs: "100%",
+            sm: "unset",
+            // md: "unset",
+          },
+
+          aspectRatio: {
+            xs: "auto",
+            md: "16/9",
+          },
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
