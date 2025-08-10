@@ -32,7 +32,7 @@ export default function Home() {
 
   return (
     <>
-      <Box sx={{ paddingBottom: 4, mb: 75 }}>
+      <Box sx={{ paddingBottom: 4 }}>
         <NavBar handleCloseSideBar={handleCloseSideBar} />
         <Container>
           <Box
