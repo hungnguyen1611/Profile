@@ -45,7 +45,9 @@ export default function Introduce() {
           }}
           variant="h2"
         >
-          <ReusableType texts={["Hi, I'm Hung Nguyen", "This is my portfolio"]} />
+          <ReusableType
+            texts={["Hi, I'm Hung Nguyen", "This is my portfolio"]}
+          />
         </Typography>
       </Stack>
 
@@ -312,7 +314,7 @@ export default function Introduce() {
               }}
               variant="h2"
             >
-              1
+              2
             </Typography>
           </Box>
 
