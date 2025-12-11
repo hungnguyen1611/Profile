@@ -1,10 +1,10 @@
-import { Box, Button, Container, Drawer, List, ListItem } from "@mui/material";
+import { Box, Button, Container, Drawer, List, ListItem, Stack } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import NavBar from "../../components/AppBar/NavBar";
 import ButtonToTop from "../../components/ButtonToTop/ButtonToTop";
-import Contact from "../../components/Contact/Contact";
+import Footer from "../../components/Footer/Footer";
 import Introduce from "../../components/Introduce/Introduce";
 import { LinkToSection } from "../../components/LinkToSection/LinkToSection";
 import { RecentWorks } from "../../components/RecentWorks/RecentWorks";
@@ -19,7 +19,7 @@ export default function Home() {
 
   const handleLogout = () => {
     localStorage.removeItem("userInfo");
-    navigate("/login");
+    navigate("/");
   };
 
   // useEffect(() => {
@@ -32,9 +32,9 @@ export default function Home() {
 
   return (
     <>
-      <Box sx={{ paddingBottom: 4 }}>
+      <Box sx={{ paddingBottom: 4, bgcolor: "background.default" }}>
         <NavBar handleCloseSideBar={handleCloseSideBar} />
-        <Container>
+        <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3 } }}>
           <Box
             component={"header"}
             sx={{
@@ -54,18 +54,10 @@ export default function Home() {
           >
             <Typography variant="h4">Profile</Typography>
             <Box sx={{ display: "flex", gap: 2 }}>
-              <LinkToSection to="contact">
-                <Button className="btn-animation_let_talk"></Button>
-              </LinkToSection>
-
               <LinkToSection to="Recent">
                 <Button className="btn-animation_menu"></Button>
               </LinkToSection>
-              {!user ? (
-                <Link to="/login">
-                  <Button className="btn-animation_login"></Button>
-                </Link>
-              ) : (
+              {user && (
                 <Button
                   onClick={handleLogout}
                   className="btn-animation_logout"
@@ -80,12 +72,12 @@ export default function Home() {
             </Box>
           </Box>
 
-          <Introduce />
-
-          <Swipe />
-          <RecentWorks />
-
-          <Contact />
+          <Stack spacing={{ xs: 8, md: 10 }} sx={{ mt: 4, mb: 6 }}>
+            <Introduce />
+            <Swipe />
+            <RecentWorks />
+            <Footer />
+          </Stack>
         </Container>
       </Box>
       <Drawer
@@ -99,22 +91,11 @@ export default function Home() {
       >
         <List sx={{ width: 280 }} component={"nav"}>
           <ListItem>
-            <LinkToSection to="contact">
-              <Button className="btn-animation_let_talk"></Button>
-            </LinkToSection>
-          </ListItem>
-          <ListItem>
             <LinkToSection to="Recent">
               <Button className="btn-animation_menu"></Button>
             </LinkToSection>
           </ListItem>
-          {!user ? (
-            <ListItem>
-              <Link to="/login">
-                <Button className="btn-animation_login"></Button>
-              </Link>
-            </ListItem>
-          ) : (
+          {user && (
             <ListItem>
               <Button
                 onClick={handleLogout}

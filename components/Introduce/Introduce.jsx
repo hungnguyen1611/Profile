@@ -7,33 +7,47 @@ import { FaFacebook } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
 import { MdArrowDownward } from "react-icons/md";
 import { SiGmail } from "react-icons/si";
-import logo from "../../src/assets/images/logo.png";
 import ReusableType from "../ReusableType/ReusableType";
 
 export default function Introduce() {
   return (
-    <Box data-aos="zoom-in">
-      <Typography
-        sx={{
-          marginTop: {
-            xs: 4,
-            sm: 0,
-          },
-          paddingY: 2,
-          textAlign: "center",
-          fontSize: {
-            xs: "2rem",
-            sm: "3.75rem",
-          },
-          "&.MuiTypography-h2": {
-            color: "transparent",
-            WebkitTextStroke: (theme) => `1.5px ${theme.palette.text.primary}`, //  chỉ có thể dùng token trực tiếp (color,bgcolor,bordercolor...) ở đấy ko dùng được phải thông qua theme.palette
-          },
-        }}
-        variant="h2"
+    <Box
+      data-aos="zoom-in"
+      sx={{
+        bgcolor: "#0f172a",
+        color: "#fff",
+        borderRadius: 4,
+        p: { xs: 3, md: 5 },
+        border: "1px solid rgba(255,255,255,0.12)",
+      }}
+    >
+      <Stack
+        direction={{ xs: "column", md: "row" }}
+        spacing={{ xs: 3, md: 5 }}
+        alignItems="center"
+        justifyContent="center"
+        sx={{ mb: 4 }}
       >
-        <ReusableType texts={["Hi, I'm Dev Nguyen", "This is my portfolio"]} />
-      </Typography>
+        <Avatar
+          sx={{ width: 180, height: 180 }}
+          alt="Hung Nguyen"
+          src="/avatar.jpg"
+        />
+        <Typography
+          sx={{
+            textAlign: { xs: "center", md: "left" },
+            fontSize: { xs: "2.25rem", sm: "3rem" },
+            color: "#fff",
+            "&.MuiTypography-h2": {
+              color: "transparent",
+              WebkitTextStroke: "1.5px #fff",
+            },
+          }}
+          variant="h2"
+        >
+          <ReusableType texts={["Hi, I'm Hung Nguyen", "This is my portfolio"]} />
+        </Typography>
+      </Stack>
 
       <Stack
         sx={{
@@ -42,37 +56,20 @@ export default function Introduce() {
             md: "row",
           },
           alignItems: "center",
+          gap: { xs: 4, md: 6 },
         }}
       >
-        <Box
+        <Stack
           sx={{
             flex: 1,
-            display: "flex",
+            marginBottom: 2,
+            paddingX: { xs: 1, md: 2 },
             justifyContent: "center",
-            paddingY: 4,
-            my: 2,
             order: {
               xs: 0,
               md: 1,
             },
-          }}
-        >
-          <Avatar
-            sx={{ width: 250, height: 250 }}
-            alt="Hsemy Sharp"
-            src={logo}
-          />
-        </Box>
-
-        <Stack
-          sx={{
-            flex: 1,
-            marginBottom: 4,
-            paddingX: 4,
-            justifyContent: "center",
-            order: {
-              xs: 0,
-            },
+            textAlign: { xs: "center", md: "left" },
           }}
           spacing={4}
         >
@@ -291,7 +288,7 @@ export default function Introduce() {
               }}
               variant="h2"
             >
-              4
+              7
             </Typography>
           </Box>
 

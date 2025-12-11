@@ -25,7 +25,7 @@ export default function NavBar({ handleCloseSideBar }) {
           }}
           variant="h6"
         >
-          dev nguyen
+          hung nguyen
         </Typography>
 
         <IconButton

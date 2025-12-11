@@ -2,7 +2,7 @@ import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { Element } from "react-scroll";
 import { toast } from "react-toastify";
-import { sendInfo_API } from "../../APIS";
+import { sendInfo_API } from "../../api";
 import { CustomTextField } from "../CustomTextField/CustomTextField";
 
 export default function Contact() {
@@ -49,22 +49,30 @@ export default function Contact() {
             overflow: "hidden",
           }}
         >
-          <Box data-aos="fade-left" sx={{ display: "flex", gap: 5 }}>
+          <Box
+            data-aos="fade-left"
+            sx={{ display: "flex", gap: 5, flexWrap: "wrap" }}
+          >
             <Box>
-              <Typography variant="h4">Email:</Typography>
-              <Box component={"a"} href="mailto:devnguyen@gmail">
-                <Typography variant="h6">devnguyen@gmail.com</Typography>
+              <Typography variant="h4">Email</Typography>
+              <Box
+                component={"a"}
+                href="mailto:nguyenquochung16112003@gmail.com"
+              >
+                <Typography variant="h6">
+                  nguyenquochung16112003@gmail.com
+                </Typography>
               </Box>
             </Box>
             <Box>
-              <Typography variant="h4">Call</Typography>
+              <Typography variant="h4">Phone</Typography>
               <Typography
                 sx={{ wordBreak: "break-word" }}
                 component={"a"}
                 href="tel:0386905265"
                 variant="h6"
               >
-                +84386905265
+                +84 386 905 265
               </Typography>
             </Box>
           </Box>

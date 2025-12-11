@@ -25,17 +25,28 @@ const Swipe = () => {
   };
 
   return (
-    <Box sx={{ mt: 5 }}>
+    <Box
+      sx={{
+        mt: 6,
+        bgcolor: "#0f172a",
+        color: "#fff",
+        borderRadius: 4,
+        p: { xs: 2, md: 3 },
+        border: "1px solid rgba(255,255,255,0.12)",
+      }}
+    >
       <Slider {...settings}>
         {iconList.map((icon, index) => (
           <Box
             sx={{
+              px: { xs: 0.25, sm: 0.75 },
               "& svg": {
                 fontSize: {
-                  xs: "50px",
-                  sm: "100px",
-                  md: "150px",
+                  xs: "28px",
+                  sm: "56px",
+                  md: "84px",
                 },
+                color: "#fff",
               },
             }}
             key={index}
