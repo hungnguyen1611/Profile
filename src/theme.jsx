@@ -11,13 +11,13 @@ const theme = createTheme({
     },
     text: {
       primary: "#ffff",
-      secondary: "#400d64",
-      // secondary: "linear-gradient(45deg, #ff82f3, #7b13ff 50%, #400d64);",
+      secondary: "#0EA5E9",
+      // secondary: "linear-gradient(45deg, #06B6D4, #3B82F6 50%, #0EA5E9);",
     },
     background: {
       default: "#000",
       light: "#262626",
-      linear: "linear-gradient(45deg, #ff82f3, #7b13ff 50%, #400d64);",
+      linear: "linear-gradient(45deg, #06B6D4, #3B82F6 50%, #0EA5E9);",
       paper: "#ffff",
     },
   },

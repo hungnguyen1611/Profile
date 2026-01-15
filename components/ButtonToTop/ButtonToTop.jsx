@@ -46,7 +46,7 @@ export default function ButtonToTop() {
                   ? `${anim.name} 4s ease-in-out forwards`
                   : "none",
               filter: blast
-                ? "drop-shadow(0 12px 24px rgba(255,130,243,0.55))"
+                ? "drop-shadow(0 12px 24px rgba(6,182,212,0.55))"
                 : "none",
             }}
           />
@@ -55,7 +55,7 @@ export default function ButtonToTop() {
           background: "transparent",
           bottom: 70,
           right: 40,
-          color: "#ff82f3",
+              color: "#06B6D4",
           fontSize: "2.6rem",
           padding: 0,
           borderRadius: "50%",

@@ -42,7 +42,7 @@ export default function Home() {
                 xs: "none",
                 sm: "flex",
               },
-              justifyContent: "space-between",
+              justifyContent: "flex-end",
               alignItems: "center",
               mt: 4,
               paddingY: 3,
@@ -52,7 +52,6 @@ export default function Home() {
               left: 0,
             }}
           >
-            <Typography variant="h4">Profile</Typography>
             <Box sx={{ display: "flex", gap: 2 }}>
               <LinkToSection to="Recent">
                 <Button className="btn-animation_menu"></Button>

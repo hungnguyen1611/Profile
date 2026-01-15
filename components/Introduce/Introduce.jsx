@@ -1,8 +1,9 @@
-import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, useMediaQuery } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import { useTheme } from "@mui/material/styles";
 import { FaFacebook } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa6";
 import { MdArrowDownward } from "react-icons/md";
@@ -10,6 +11,8 @@ import { SiGmail } from "react-icons/si";
 import ReusableType from "../ReusableType/ReusableType";
 
 export default function Introduce() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Box
       data-aos="zoom-in"
@@ -45,9 +48,13 @@ export default function Introduce() {
           }}
           variant="h2"
         >
-          <ReusableType
-            texts={["Hi, I'm Hung Nguyen", "This is my portfolio"]}
-          />
+          {isMobile ? (
+            <ReusableType
+              texts={["Hi, I'm Hung Nguyen", "This is my portfolio"]}
+            />
+          ) : (
+            "Hi, I'm Hung Nguyen"
+          )}
         </Typography>
       </Stack>
 
@@ -146,18 +153,19 @@ export default function Introduce() {
               >
                 <Typography component="span">
                   Graduated in software engineering with a background in web
-                  design and development and nearly a year of experience as a
-                  Front-end Developer.
+                  design and development and experience as a Fullstack Developer. 
+                  Proficient in Next.js, TypeScript, ReactJS, Node.js, and MongoDB.
                 </Typography>
               </AccordionSummary>
               <AccordionDetails sx={{ padding: 0 }}>
                 <Typography>
                   Graduated in software engineering with a background in web
-                  design and development and nearly a year of experience as a
-                  Front-end Developer. Proficient in ReactJS, solid knowledge of
-                  HTML, CSS, JavaScript. My goal is to become a Front-end expert
-                  within 2 years by participating in projects and constantly
-                  learning and practicing professional skills
+                  design and development and experience as a Fullstack Developer. 
+                  Proficient in Next.js, TypeScript, ReactJS, Node.js, MongoDB, 
+                  with solid knowledge of HTML, CSS, JavaScript, and modern web 
+                  technologies. My goal is to become a Fullstack expert by 
+                  participating in projects and constantly learning and practicing 
+                  professional skills across both frontend and backend development.
                 </Typography>
               </AccordionDetails>
             </Accordion>
@@ -170,33 +178,44 @@ export default function Introduce() {
               Skills
             </Typography>
             {/* <Typography variant="subtitle1">Web Development</Typography> */}
-            <Box component={"ul"}>
+            <Box 
+              component={"ul"}
+              sx={{
+                listStyle: "none",
+                padding: 0,
+                margin: 0,
+                "& > li": {
+                  marginBottom: 2,
+                  lineHeight: 1.8,
+                },
+              }}
+            >
               <Box component={"li"}>
-                <span className="gradient--text">Language:</span> Javascript,
+                <span style={{ fontWeight: 600, color: "#06B6D4" }}>Language:</span> Javascript,
                 TypeScript, Html, CSS
               </Box>
               <Box component={"li"}>
-                <span className="gradient--text">Framework & Library:</span>
+                <span style={{ fontWeight: 600, color: "#06B6D4" }}>Framework & Library:</span>
                 ReactJS, NextJS, Ether.js, Redux, Redux-toolkit, redux-persist
                 Zustand, socket.io,MongoDB Node.js Driver
               </Box>
               <Box component={"li"}>
-                <span className="gradient--text">Library UI:</span>
-                Material UI, Ant Design,AOS, react-type-animation, react-slick,
+                <span style={{ fontWeight: 600, color: "#06B6D4" }}>Library UI:</span>
+                Tailwind CSS, Material UI, Ant Design,AOS, react-type-animation, react-slick,
                 Axios, react-toastify, dnd-kit
               </Box>
               <Box component={"li"}>
-                <span className="gradient--text">Database:</span> MongoDB,
+                <span style={{ fontWeight: 600, color: "#06B6D4" }}>Database:</span> MongoDB,
                 Firebase
               </Box>
               <Box component={"li"}>
-                <span className="gradient--text">Version control:</span> Git
+                <span style={{ fontWeight: 600, color: "#06B6D4" }}>Version control:</span> Git
               </Box>
               <Box component={"li"}>
-                <span>Tools:</span> VSCode, Postman,Github, GitLab
+                <span style={{ fontWeight: 600, color: "#06B6D4" }}>Tools:</span> VSCode, Cursor, Postman,Github, GitLab
               </Box>
               <Box component={"li"}>
-                <span className="gradient--text">Other:</span> Figma, Trello
+                <span style={{ fontWeight: 600, color: "#06B6D4" }}>Other:</span> Figma, Trello
               </Box>
             </Box>
           </Box>
@@ -278,7 +297,7 @@ export default function Introduce() {
               }}
               variant="h6"
             >
-              Projects Done
+              Recent Works
             </Typography>
             <Typography
               sx={{
@@ -290,7 +309,7 @@ export default function Introduce() {
               }}
               variant="h2"
             >
-              7
+              5
             </Typography>
           </Box>
 
